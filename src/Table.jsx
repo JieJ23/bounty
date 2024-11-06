@@ -139,13 +139,19 @@ export default function BountyTable() {
                     <section className="flex gap-2">
                       {obj.Player &&
                         obj.Player.split(",").map((ite, index) => (
-                          <div
-                            className="font-serif bg-[#0f0f0f] p-1 px-2 rounded-md"
-                            style={{ color: getColorByName(ite) }}
-                            key={index}
-                          >
-                            {ite}
-                          </div>
+                          <>
+                            {ite == `Claimed` ? (
+                              ``
+                            ) : (
+                              <div
+                                className="font-serif bg-[#0f0f0f] p-1 px-2 rounded-md"
+                                style={{ color: getColorByName(ite) }}
+                                key={index}
+                              >
+                                {ite}
+                              </div>
+                            )}
+                          </>
                         ))}
                     </section>
                   </td>
