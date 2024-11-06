@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        customCin: ["Cinzel"]
+        customCin: ["Cinzel"],
+        customAnt: ["Anton SC"]
       },
     },
   },
