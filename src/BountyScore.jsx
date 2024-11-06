@@ -43,7 +43,7 @@ export const bountyScore = [
   {
     player: `VDews`,
     item: `Paingorger's Gauntlets`,
-    color: `FF3131`,
+    color: `#FF3131`,
   },
   {
     player: `Samdaron`,
@@ -68,12 +68,12 @@ export const bountyScore = [
   {
     player: `VDews`,
     item: `Ring of Writhing Moon`,
-    color: `FF3131`,
+    color: `#FF3131`,
   },
   {
     player: `VDews`,
     item: `Ring of the Midday Hunt`,
-    color: `FF3131`,
+    color: `#FF3131`,
   },
   {
     player: `Snaps`,
