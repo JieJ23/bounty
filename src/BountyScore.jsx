@@ -19,7 +19,6 @@ export const bountyScore = [
     item: `Banished Lord's Talisman`,
     color: `#FF3131`,
   },
-  ,
   {
     player: `Bitis`,
     item: `Banished Lord's Talisman`,

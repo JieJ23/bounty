@@ -4,12 +4,17 @@ import Header from "./Header";
 import { useState } from "react";
 import { data } from "autoprefixer";
 
+import { useData } from "./Hook/FetchData";
+
 export default function BountyTable() {
+  const { posts, loader } = useData();
   const [category, setCategory] = useState(0);
 
   function handleCategoryChange(num) {
     setCategory(num);
   }
+
+  console.log(posts);
 
   const allInfo = [...new Set(dataLogic.map((obj) => obj.Info))].sort();
 
@@ -104,7 +109,7 @@ export default function BountyTable() {
           </thead>
           <tbody className="text-white">
             {displayData.map((obj, index) => (
-              <tr>
+              <tr key={index}>
                 <td className="py-2 font-[Roberto] text-[12px]">{index + 1}</td>
                 <td className="py-2">
                   <div className="relative">
@@ -142,7 +147,7 @@ export default function BountyTable() {
                     </div>
                   ) : (
                     <div className="flex items-center gap-1">
-                      <div>{`${obj.Bounty}`}</div>
+                      <div>{`${obj.Bounty}`} B</div>
                       <div className="w-5">
                         <img src="/gold.png" />
                       </div>
