@@ -1,5 +1,6 @@
 import { dataLogic } from "./DataLogic";
 import { bountyScore } from "./BountyScore";
+import Header from "./Header";
 
 export default function BountyTable() {
   const sortByName = dataLogic
@@ -26,14 +27,15 @@ export default function BountyTable() {
 
   return (
     <section
-      className="max-w-[1200px] mx-auto bg-transparent select-none"
+      className="max-w-[1200px] mx-auto bg-transparent select-none py-2"
       data-theme="dark"
     >
-      <div className="text-center text-[#fff] font-customCin text-[16px] mb-5 underline">
+      <Header />
+      <div className="text-center text-[#fff] font-customCin text-[16px] my-5 underline">
         ✭ Must Be 4GA & Max Aspect ✭
       </div>
       <div className="overflow-x-auto">
-        <table className="table mb-12">
+        <table className="table">
           {/* head */}
           <thead>
             <tr className="font-customCin text-gray-300">
