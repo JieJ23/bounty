@@ -76,12 +76,7 @@ export const dataLogic = [
   },
   {
     Item: `Ring of Writhing Moon`,
-    Info: `Unique Chest Armor`,
-    Bounty: `999`,
-  },
-  {
-    Item: `Ring of Writhing Moon`,
-    Info: `Unique Chest Armor`,
+    Info: `Unique Ring`,
     Bounty: `999`,
   },
   {
@@ -186,7 +181,7 @@ export const dataLogic = [
   },
   {
     Item: `Fields of Crimson`,
-    Info: `Unique `,
+    Info: `Unique 2h Sword`,
     Bounty: `8`,
   },
   {
@@ -331,7 +326,7 @@ export const dataLogic = [
   },
   {
     Item: `Cruor's Embrace`,
-    Info: `Unique `,
+    Info: `Unique Gloves`,
     Bounty: `25`,
   },
   {
@@ -351,7 +346,7 @@ export const dataLogic = [
   },
   {
     Item: `Ebonpiercer`,
-    Info: `Unique `,
+    Info: `Unique Ring`,
     Bounty: `6`,
   },
   {

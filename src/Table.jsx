@@ -1,8 +1,19 @@
 import { dataLogic } from "./DataLogic";
 import { bountyScore } from "./BountyScore";
 import Header from "./Header";
+import { useState } from "react";
+import { data } from "autoprefixer";
 
 export default function BountyTable() {
+  const [category, setCategory] = useState(0);
+
+  function handleCategoryChange(num) {
+    setCategory(num);
+  }
+
+  const allInfo = [...new Set(dataLogic.map((obj) => obj.Info))].sort();
+
+  // --------------------------------------------------
   const sortByName = dataLogic
     .slice()
     .sort((a, b) => (a.Item > b.Item ? 1 : -1));
@@ -25,6 +36,21 @@ export default function BountyTable() {
     return a.Item > b.Item ? 1 : -1;
   });
 
+  const claimedFilter = sortByName.filter(
+    (obj) => findScore(bountyScore, obj.Item).length > 0
+  );
+
+  const fullData = [sortByNameThenStatus, sortByName, claimedFilter];
+
+  for (let i = 0; i < allInfo.length; i++) {
+    let temp = sortByNameThenStatus.filter((obj) =>
+      obj.Info.includes(allInfo[i])
+    );
+    fullData.push(temp);
+  }
+
+  const displayData = fullData[category];
+
   return (
     <section
       className="max-w-[1200px] mx-auto bg-transparent select-none py-2"
@@ -34,6 +60,36 @@ export default function BountyTable() {
       <div className="text-center text-[#fff] font-customCin text-[16px] my-5 underline">
         ✭ Must Be 4GA & Max Aspect ✭
       </div>
+      {/* -------------------------------------------------- */}
+      <section className="flex flex-wrap max-w-[1000px] justify-center mx-auto mb-5 gap-1">
+        <button
+          className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_grey] font-customCin text-[10px]"
+          onClick={() => handleCategoryChange(0)}
+        >
+          Original
+        </button>
+        <button
+          className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_grey] font-customCin text-[10px]"
+          onClick={() => handleCategoryChange(1)}
+        >
+          Alphabetical
+        </button>
+        <button
+          className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_grey] font-customCin text-[10px]"
+          onClick={() => handleCategoryChange(2)}
+        >
+          Claimed
+        </button>
+        {allInfo.map((ite, index) => (
+          <button
+            className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_black] font-customCin text-[10px]"
+            onClick={() => handleCategoryChange(3 + index)}
+          >
+            {ite.slice(7)}
+          </button>
+        ))}
+      </section>
+      {/* -------------------------------------------------- */}
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -47,7 +103,7 @@ export default function BountyTable() {
             </tr>
           </thead>
           <tbody className="text-white">
-            {sortByNameThenStatus.map((obj, index) => (
+            {displayData.map((obj, index) => (
               <tr>
                 <td className="py-2 font-[Roberto] text-[12px]">{index + 1}</td>
                 <td className="py-2">
