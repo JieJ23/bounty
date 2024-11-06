@@ -147,7 +147,7 @@ export const bountyScore = [
   },
   {
     player: `Claimed`,
-    item: `Crown Of Lucion`,
+    item: `Crown of Lucion`,
     color: `yellow`,
   },
   {
