@@ -33,7 +33,7 @@ export const bountyScore = [
   {
     player: `Shadow4209`,
     item: `Tibault's Will`,
-    color: `blue`,
+    color: `#1F51FF`,
   },
   {
     player: `Snaps`,

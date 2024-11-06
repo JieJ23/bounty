@@ -91,7 +91,7 @@ export default function BountyTable() {
       </section>
       {/* -------------------------------------------------- */}
       <div className="overflow-x-auto">
-        <table className="table">
+        <table className="table table-zebra">
           {/* head */}
           <thead>
             <tr className="font-customCin text-gray-300">
@@ -123,11 +123,11 @@ export default function BountyTable() {
                   </section>
                 </td>
                 <td className="py-2 font-customCin">
-                  <section className="flex gap-4">
+                  <section className="flex gap-2">
                     {findScore(bountyScore, obj.Item) &&
                       findScore(bountyScore, obj.Item).map((obj) => (
                         <div
-                          className="font-customCin"
+                          className="font-serif bg-[#0f0f0f] p-1 px-2 rounded-md"
                           style={{ color: obj.color }}
                         >
                           {obj.player}
@@ -142,7 +142,7 @@ export default function BountyTable() {
                     </div>
                   ) : (
                     <div className="flex items-center gap-1">
-                      <div>{`${obj.Bounty} B`}</div>
+                      <div>{`${obj.Bounty}`}</div>
                       <div className="w-5">
                         <img src="/gold.png" />
                       </div>
