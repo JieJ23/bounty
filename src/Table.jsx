@@ -108,10 +108,10 @@ export default function BountyTable() {
                 <td className="py-2 font-[Roberto] text-[12px]">{index + 1}</td>
                 <td className="py-2">
                   <div className="relative">
-                    <div className="w-9 absolute top-0 left-0 -z-10">
+                    <div className="w-9 absolute top-0 left-0">
                       <img src={`/ubg.png`} draggable={false} />
                     </div>
-                    <div className="w-9 scale-[90%]">
+                    <div className="w-9 scale-[90%] z-20">
                       <img src={`/Uniques/${obj.Item}.png`} draggable={false} />
                     </div>
                   </div>
