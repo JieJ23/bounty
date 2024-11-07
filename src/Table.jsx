@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useData } from "./Hook/FetchData";
 import Loading from "./Hook/Loading";
 
-import { getColorByName } from "./Data/NameColor";
+// import { getColorByName } from "./Data/NameColor";
 
 export default function BountyTable() {
   const { posts, loader } = useData();
@@ -145,7 +145,7 @@ export default function BountyTable() {
                             ) : (
                               <div
                                 className="font-serif bg-[#0f0f0f] p-1 px-2 rounded-md"
-                                style={{ color: getColorByName(ite) }}
+                                style={{ color: obj.Color.split(",")[index] }}
                                 key={index}
                               >
                                 {ite}

@@ -6,7 +6,7 @@ export const getColorByName = (name) => {
     case "VDews":
       return "#FF3131";
     case "Samdaron":
-      return "white";
+      return "#fff";
     case "Elduderino":
       return "cyan";
     case "Shadow4209":
@@ -17,6 +17,6 @@ export const getColorByName = (name) => {
     case "Bitis":
       return "#b743ec";
     default:
-      return "yellow";
+      return "#fff";
   }
 };
