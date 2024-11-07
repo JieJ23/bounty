@@ -37,8 +37,14 @@ export default function BountyTable() {
   });
 
   const claimedFilter = sortByName.filter((obj) => obj.Player);
+  const unlaimedFilter = sortByName.filter((obj) => !obj.Player);
 
-  const fullData = [sortByNameThenStatus, sortByName, claimedFilter];
+  const fullData = [
+    sortByNameThenStatus,
+    sortByName,
+    unlaimedFilter,
+    claimedFilter,
+  ];
 
   for (let i = 0; i < allInfo.length; i++) {
     let temp = sortByNameThenStatus.filter((obj) =>
@@ -64,7 +70,7 @@ export default function BountyTable() {
       {loader ? (
         <Loading />
       ) : (
-        <section className="flex flex-wrap max-w-[1000px] justify-center mx-auto mb-5 gap-1">
+        <section className="flex flex-wrap max-w-[1200px] justify-center mx-auto mb-5 gap-1">
           <button
             className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_black] font-customCin text-[10px]"
             onClick={() => handleCategoryChange(0)}
@@ -81,13 +87,19 @@ export default function BountyTable() {
             className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_black] font-customCin text-[10px]"
             onClick={() => handleCategoryChange(2)}
           >
+            Unclaimed
+          </button>
+          <button
+            className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_black] font-customCin text-[10px]"
+            onClick={() => handleCategoryChange(3)}
+          >
             Claimed
           </button>
           {allInfo.map((ite, index) => (
             <button
               className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_black] font-customCin text-[10px]"
               key={index}
-              onClick={() => handleCategoryChange(3 + index)}
+              onClick={() => handleCategoryChange(4 + index)}
             >
               {ite.slice(7)}
             </button>
