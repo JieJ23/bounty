@@ -2,6 +2,7 @@
 // import { bountyScore } from "./BountyScore";
 import Header from "./Header";
 import { useState } from "react";
+import Marquee from "react-fast-marquee";
 
 import { useData } from "./Hook/FetchData";
 import Loading from "./Hook/Loading";
@@ -30,8 +31,8 @@ export default function BountyTable() {
     const aExists = !!a.Player;
     const bExists = !!b.Player;
 
-    if (aExists && !bExists) return -1;
-    if (!aExists && bExists) return 1;
+    if (aExists && !bExists) return 1;
+    if (!aExists && bExists) return -1;
 
     return a.Item > b.Item ? 1 : -1;
   });
@@ -110,8 +111,57 @@ export default function BountyTable() {
       {loader ? (
         <div />
       ) : (
+        <Marquee>
+          <section className="flex gap-40">
+            {claimedFilter.map((obj, index) => (
+              <div className="flex items-center gap-2 px-2">
+                <div className="py-2">
+                  <div className="relative">
+                    <div className="w-9 absolute top-0 left-0">
+                      <img src={`/ubg.png`} draggable={false} />
+                    </div>
+                    <div className="w-9 scale-[90%] z-20">
+                      <img src={`/Uniques/${obj.Item}.png`} draggable={false} />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <div
+                    key={index}
+                    className="font-customCin text-[12px] text-white"
+                  >
+                    {obj.Item}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <div className="font-customAnt text-[red] text-[14px]">
+                      CLAIMED
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 shrink-0 stroke-current text-[#16f38f]"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </section>
+        </Marquee>
+      )}
+      {/* -------------------------------------------------- */}
+      {loader ? (
+        <div />
+      ) : (
         <div className="overflow-x-auto">
-          <table className="table table-zebra">
+          <table className="table">
             {/* head */}
             <thead>
               <tr className="font-customCin text-gray-300">
@@ -125,7 +175,10 @@ export default function BountyTable() {
             </thead>
             <tbody className="text-white">
               {displayData.map((obj, index) => (
-                <tr key={index}>
+                <tr
+                  key={index}
+                  className={index % 2 ? `bg-[#0b0909cf]` : `bg-[#07070700]`}
+                >
                   <td className="py-2 font-[Roberto] text-[12px]">
                     {index + 1}
                   </td>
