@@ -112,7 +112,7 @@ export default function BountyTable() {
         <div />
       ) : (
         <Marquee>
-          <section className="flex gap-40">
+          <section className="flex gap-40 px-20">
             {claimedFilter.map((obj, index) => (
               <div className="flex items-center gap-2 px-2">
                 <div className="py-2">
