@@ -55,8 +55,10 @@ export default function BountyTable() {
       data-theme="dark"
     >
       <Header />
-      <div className="text-center text-[#fff] font-customCin text-[16px] my-5 underline">
-        ✭ Must Be 4GA & Max Aspect ✭
+      <div className="flex justify-center">
+        <div className="text-[#fff] font-customCin text-[16px] my-5 border-b-2 inline-block">
+          ✭ Must Be 4GA & Upper Range Aspect ✭
+        </div>
       </div>
       {/* -------------------------------------------------- */}
       {loader ? (
@@ -64,19 +66,19 @@ export default function BountyTable() {
       ) : (
         <section className="flex flex-wrap max-w-[1000px] justify-center mx-auto mb-5 gap-1">
           <button
-            className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_grey] font-customCin text-[10px]"
+            className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_black] font-customCin text-[10px]"
             onClick={() => handleCategoryChange(0)}
           >
             Original
           </button>
           <button
-            className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_grey] font-customCin text-[10px]"
+            className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_black] font-customCin text-[10px]"
             onClick={() => handleCategoryChange(1)}
           >
             Alphabetical
           </button>
           <button
-            className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_grey] font-customCin text-[10px]"
+            className="btn btn-sm text-white btn-neutral shadow-[inset_0_0_10px_black] font-customCin text-[10px]"
             onClick={() => handleCategoryChange(2)}
           >
             Claimed
@@ -104,6 +106,7 @@ export default function BountyTable() {
                 <th>Index</th>
                 <th></th>
                 <th>Item Name</th>
+                <th></th>
                 <th>Player</th>
                 <th>Bounty</th>
               </tr>
@@ -135,6 +138,28 @@ export default function BountyTable() {
                       </div>
                     </section>
                   </td>
+                  <td className="py-2 font-customCin text-[12px] sm:text-[13px]">
+                    <section>
+                      {obj.Affix1 && (
+                        <>
+                          <div className="flex gap-1">
+                            <div className="font-serif">{obj.Affix1}</div>
+                            {obj.Affix2 && (
+                              <div className="text-[pink]">{`|`}</div>
+                            )}
+                            {obj.Affix2 && (
+                              <div className="font-serif">
+                                {`${obj.Affix2}`}
+                              </div>
+                            )}
+                          </div>
+                          <div className="text-[10px] text-gray-400">
+                            Affix Range
+                          </div>
+                        </>
+                      )}
+                    </section>
+                  </td>
                   <td className="py-2 font-customCin">
                     <section className="flex gap-2">
                       {obj.Player &&
@@ -144,8 +169,10 @@ export default function BountyTable() {
                               ``
                             ) : (
                               <div
-                                className="font-serif bg-[#0f0f0f] p-1 px-2 rounded-md"
-                                style={{ color: obj.Color.split(",")[index] }}
+                                className="font-customCin p-1 px-2 rounded-md text-black"
+                                style={{
+                                  backgroundColor: obj.Color.split(",")[index],
+                                }}
                                 key={index}
                               >
                                 {ite}
@@ -162,7 +189,12 @@ export default function BountyTable() {
                       </div>
                     ) : (
                       <div className="flex items-center gap-1">
-                        <div>{`${obj.Bounty}`} B</div>
+                        <div>
+                          {`${obj.Bounty}`}{" "}
+                          <span className="font-[monospace] text-[gold]">
+                            B
+                          </span>
+                        </div>
                         <div className="w-5">
                           <img src="/gold.png" />
                         </div>
