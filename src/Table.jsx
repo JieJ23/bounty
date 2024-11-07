@@ -142,7 +142,7 @@ export default function BountyTable() {
                     <section>
                       {obj.Affix1 && (
                         <>
-                          <div className="flex gap-1">
+                          <div className="flex gap-1 min-w-[120px]">
                             <div className="font-serif">{obj.Affix1}</div>
                             {obj.Affix2 && (
                               <div className="text-[pink]">{`|`}</div>
@@ -169,7 +169,7 @@ export default function BountyTable() {
                               ``
                             ) : (
                               <div
-                                className="font-customCin p-1 px-2 rounded-md text-black"
+                                className="font-serif text-[12px] p-1 px-2 rounded-md text-black"
                                 style={{
                                   backgroundColor: obj.Color.split(",")[index],
                                 }}
