@@ -57,7 +57,7 @@ export default function BountyTable() {
       <Header />
       <div className="flex justify-center">
         <div className="text-[#fff] font-customCin text-[16px] my-5 border-b-2 inline-block">
-          ✭ Must Be 4GA & Upper Range Aspect ✭
+          ✭ Must Be 4GA & Max Aspect ✭
         </div>
       </div>
       {/* -------------------------------------------------- */}
@@ -106,7 +106,7 @@ export default function BountyTable() {
                 <th>Index</th>
                 <th></th>
                 <th>Item Name</th>
-                <th></th>
+                <th>Item Affix</th>
                 <th>Player</th>
                 <th>Bounty</th>
               </tr>
