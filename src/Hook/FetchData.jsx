@@ -16,7 +16,8 @@ export const DataProvider = ({ children }) => {
         const response = await fetch(
           `https://script.google.com/macros/s/AKfycbwcOVWW74NrboxcyYUY4nYXao39VpfTqdLQQLfIN2kQ9EQ423RC803ckZtPDTiijyEbCQ/exec`
         );
-        const posts = await response.json();
+        const data = await response.json();
+        const posts = data.filter((obj) => obj.Listing === `y`);
         setPosts(posts);
         setLoader(false);
       } catch (error) {
