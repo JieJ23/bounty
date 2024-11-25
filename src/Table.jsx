@@ -144,7 +144,7 @@ export default function BountyTable() {
                 <div className="flex flex-col">
                   <div
                     key={index}
-                    className="font-customCin text-[12px] text-white"
+                    className="font-customExo text-[12px] text-white"
                   >
                     {obj.Item}
                   </div>
@@ -188,7 +188,6 @@ export default function BountyTable() {
                     <>
                       <div className="font-customAnt text-[24px] text-[#ff0000] border-y-2 border-[#ff0000] inline-block -rotate-[20deg] absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] text-center">
                         Claimed
-                        <div className="text-[18px]"> by {obj.Player}</div>
                       </div>
                     </>
                   )}
@@ -246,18 +245,25 @@ export default function BountyTable() {
                         Get An Offer
                       </div>
                     ) : (
-                      <>
-                        <div className="font-customExo text-[14px] text-[#fff]">
-                          {obj.Bounty} Billion
+                      <div className="flex flex-col items-center">
+                        <div className="flex items-center">
+                          <div className="font-customExo text-[14px] text-[#fff]">
+                            {obj.Bounty} Billion
+                          </div>
+                          <span>
+                            <img
+                              src="/gold.png"
+                              alt="Gold Price"
+                              className="w-5"
+                            />
+                          </span>
                         </div>
-                        <span>
-                          <img
-                            src="/gold.png"
-                            alt="Gold Price"
-                            className="w-5"
-                          />
-                        </span>
-                      </>
+                        {obj.Player && (
+                          <div className="font-customExo text-[12px] text-[#ff0000]">
+                            Claimed by {obj.Player}
+                          </div>
+                        )}
+                      </div>
                     )}
                   </div>
                 </section>
