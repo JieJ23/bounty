@@ -259,7 +259,7 @@ export default function BountyTable() {
                           </span>
                         </div>
                         {obj.Player && (
-                          <div className="font-customExo text-[12px] text-[#ff0000]">
+                          <div className="font-customExo text-[11px] text-[#ff0000] text-center">
                             Claimed by {obj.Player}
                           </div>
                         )}
