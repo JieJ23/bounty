@@ -8,7 +8,15 @@ import { useData } from "./Hook/FetchData";
 import Loading from "./Hook/Loading";
 
 // import { getColorByName } from "./Data/NameColor";
-import { ItemBg, ItemBg2, ItemBg3, ItemBg4 } from "./Data/ItemBatch";
+import {
+  ItemBg,
+  ItemBg2,
+  ItemBg3,
+  ItemBg4,
+  ItemBg5,
+  ItemBg6,
+  ItemBg7,
+} from "./Data/ItemBatch";
 
 export default function BountyTable() {
   const { posts, loader } = useData();
@@ -66,7 +74,15 @@ export default function BountyTable() {
 
   const displayData = fullData[category];
 
-  const randomBg = [<ItemBg />, <ItemBg2 />, <ItemBg3 />, <ItemBg4 />];
+  const randomBg = [
+    <ItemBg />,
+    <ItemBg2 />,
+    <ItemBg3 />,
+    <ItemBg4 />,
+    <ItemBg5 />,
+    <ItemBg6 />,
+    <ItemBg7 />,
+  ];
 
   return (
     <section
@@ -204,7 +220,7 @@ export default function BountyTable() {
                       <img src={`/Uniques/${obj.Item}.png`} draggable={false} />
                     </div>
                   </div>
-                  <img src="/full_div.png" className="p-0.5" />
+                  <img src="/full_div.png" />
 
                   {obj.Affix1 && (
                     <div>
@@ -222,7 +238,7 @@ export default function BountyTable() {
                           <div className="font-customExo text-[10px]">{`${obj.Affix2}`}</div>
                         )}
                       </div>
-                      <img src="/half_div.png" className="p-0.5" />
+                      <img src="/half_div.png" />
                     </div>
                   )}
 
@@ -237,7 +253,7 @@ export default function BountyTable() {
                       </div>
                     )}
                   </section>
-                  <img src="/full_div.png" className="p-0.5" />
+                  <img src="/full_div.png" />
 
                   <div className="flex items-center justify-center gap-1">
                     {obj.Bounty == 0 ? (
