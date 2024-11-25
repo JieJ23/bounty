@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         customCin: ["Cinzel"],
-        customAnt: ["Anton SC"]
+        customAnt: ["Anton SC"],
+        customExo: ["Exocet"],
       },
     },
   },
